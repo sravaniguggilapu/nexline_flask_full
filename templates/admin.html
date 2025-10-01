@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block content %}
+<h2>Admin</h2>
+<p>Download the original Excel files used in the demo:</p>
+<ul>
+  {% for d in docs %}<li><a href="{{ url_for('static_files', filename='../docs/' + d) }}">{{ d }}</a></li>{% endfor %}
+</ul>
+<p>To regenerate data, replace files in the docs/ folder and restart the app.</p>
+{% endblock %}

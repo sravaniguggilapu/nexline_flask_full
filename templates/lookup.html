@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block content %}
+<h2>Machine Lookup</h2>
+<form method="post" action="{{ url_for('lookup') }}">
+  <div class="input-group mb-3">
+    <select class="form-select" name="machine_id">
+      {% for m in machines %}<option value="{{ m.machine_id }}">{{ m.machine_id }} - {{ m.machine_type }} ({{ m.plant }})</option>{% endfor %}
+    </select>
+    <button class="btn btn-primary" type="submit">View Machine</button>
+  </div>
+</form>
+{% endblock %}

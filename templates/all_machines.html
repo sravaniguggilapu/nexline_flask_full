@@ -1,0 +1,42 @@
+{% extends "base.html" %}{% block content %}
+<h2>All Machines</h2>
+<div class="mb-3 d-flex">
+  <form class="me-3" method="get">
+    <select class="form-select" id="plantFilter" onchange="filterTable()">
+      <option value="All">All Plants</option>
+      {% for p in plants %}<option value="{{ p.plant }}">{{ p.plant }}</option>{% endfor %}
+    </select>
+  </form>
+  <div class="ms-auto">
+    <a href="{{ url_for('admin') }}" class="btn btn-sm btn-outline-primary">Admin</a>
+  </div>
+</div>
+<table class="table table-striped" id="machinesTable">
+<thead><tr><th>Machine ID</th><th>Plant</th><th>Line</th><th>Type</th><th>Status</th><th>Uptime % (24h)</th><th>Total Runtime (hrs)</th><th>Last Downtime</th></tr></thead>
+<tbody>
+{% for m in machines %}
+<tr data-plant="{{ m.plant }}">
+  <td><a href="{{ url_for('machine_detail', machine_id=m.machine_id) }}">{{ m.machine_id }}</a></td>
+  <td>{{ m.plant }}</td>
+  <td>{{ m.production_line }}</td>
+  <td>{{ m.machine_type }}</td>
+  <td>
+    {% if m.current_status=='Running' %}<span class="badge bg-success">Running</span>
+    {% elif m.current_status=='Idle' %}<span class="badge bg-warning text-dark">Idle</span>
+    {% else %}<span class="badge bg-danger">Down</span>{% endif %}
+  </td>
+  <td>{{ m.uptime_pct_24h }}%</td>
+  <td>{{ m.total_runtime_hours }}</td>
+  <td>{{ m.last_downtime }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<script>
+function filterTable(){
+  var f = document.getElementById('plantFilter').value;
+  var rows = document.querySelectorAll('#machinesTable tbody tr');
+  rows.forEach(r=>{ if(f==='All' || r.getAttribute('data-plant')===f) r.style.display=''; else r.style.display='none'; });
+}
+</script>
+{% endblock %}

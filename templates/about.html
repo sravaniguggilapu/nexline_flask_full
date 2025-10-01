@@ -1,0 +1,27 @@
+{% extends "base.html" %}{% block content %}
+<h2>About Machines</h2>
+<p>This page describes each machine type and the data fields collected in the prototype.</p>
+<div class="row">
+  {% for m in machines %}
+  <div class="col-md-4">
+    <div class="card mb-3">
+      <img src="{{ url_for('static_files', filename='img/' + m.machine_id + '.jpg') }}" class="card-img-top" alt="{{ m.machine_id }}">
+      <div class="card-body">
+        <h5>{{ m.machine_id }} - {{ m.machine_type }}</h5>
+        <p>Plant: {{ m.plant }} <br>Line: {{ m.production_line }} <br>Installed: {{ m.install_date }} <br>Manufacturer: {{ m.manufacturer }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<hr>
+<h4>Data Fields</h4>
+<table class="table table-bordered">
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>timestamp</td><td>Reading timestamp (ISO)</td></tr>
+<tr><td>machine_id</td><td>Machine identifier</td></tr>
+<tr><td>status</td><td>Running / Idle / Down</td></tr>
+<tr><td>uptime_seconds</td><td>Seconds active in interval</td></tr>
+<tr><td>total_runtime_hours</td><td>Cumulative runtime</td></tr>
+</table>
+{% endblock %}

@@ -1,0 +1,3 @@
+plant,total_machines,avg_uptime_pct,total_runtime_hours,recent_downtimes
+Plant A,10,92.06,4442.02,179
+Plant B,10,91.69,4681.47,188

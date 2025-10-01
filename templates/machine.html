@@ -1,0 +1,33 @@
+{% extends "base.html" %}{% block content %}
+<h2>Machine {{ machine_id }}</h2>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card mb-3 p-3">
+      <h4>{{ machine_id }}</h4>
+      <p>Plant: {{ plant }}<br>Line: {{ production_line }}<br>Type: {{ machine_type }}</p>
+      <p>Status: <strong>{{ current_status }}</strong></p>
+      <p>Total runtime (hrs): <strong>{{ total_runtime }}</strong></p>
+      <p>Expected life (hrs): <strong>{{ expected_life }}</strong></p>
+      <p>Remaining (hrs): <strong>{{ remaining|round(2) }}</strong></p>
+      <p>Uptime (48h): <strong>{{ uptime_pct }}%</strong></p>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <canvas id="uptimeChart" height="120"></canvas>
+    <canvas id="runtimeChart" height="120" class="mt-3"></canvas>
+    <h5 class="mt-3">Recent Events</h5>
+    <table class="table"><thead><tr><th>Timestamp</th><th>Status</th><th>Notes</th></tr></thead><tbody>
+    {% for e in events %}<tr><td>{{ e.timestamp }}</td><td>{{ e.status }}</td><td>{{ e.notes }}</td></tr>{% endfor %}
+    </tbody></table>
+  </div>
+</div>
+<script>
+const ts = {{ chart_ts|tojson }};
+const running = {{ chart_running|tojson }};
+const runtime = {{ chart_runtime|tojson }};
+const ctx = document.getElementById('uptimeChart').getContext('2d');
+new Chart(ctx, {type:'line', data:{labels:ts, datasets:[{label:'Running (1 = running)', data:running, borderColor:'#00b894', backgroundColor:'rgba(0,184,148,0.2)', fill:true}]}, options:{scales:{y:{beginAtZero:true, max:1}}}});
+const ctx2 = document.getElementById('runtimeChart').getContext('2d');
+new Chart(ctx2, {type:'line', data:{labels:ts, datasets:[{label:'Total runtime (hrs)', data:runtime, borderColor:'#0d6efd', backgroundColor:'rgba(13,110,253,0.2)', fill:true}]}});
+</script>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block content %}
+<h2>Register</h2>
+<form method="post" action="{{ url_for('register') }}">
+  <div class="mb-3"><label>Username</label><input class="form-control" name="username"></div>
+  <div class="mb-3"><label>Password</label><input type="password" class="form-control" name="password"></div>
+  <div class="mb-3"><label>Role</label><select class="form-select" name="role"><option value="viewer">Viewer</option><option value="maintenance">Maintenance</option><option value="manager">Manager</option></select></div>
+  <button class="btn btn-success">Register</button>
+</form>
+{% endblock %}

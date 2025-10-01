@@ -1,0 +1,31 @@
+event_id,timestamp,machine_id,plant,description,action_taken,reported_by
+E001,2025-09-30 01:12:32,M20,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician A
+E002,2025-09-30 08:17:32,M16,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician A
+E003,2025-09-29 12:32:32,M11,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician A
+E004,2025-09-28 08:57:32,M04,Plant A,Unexpected stop detected,Inspector notified; pending review,Technician A
+E005,2025-09-29 07:12:32,M16,Plant B,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E006,2025-09-28 18:07:32,M17,Plant B,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E007,2025-09-29 11:32:32,M15,Plant B,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E008,2025-09-28 05:37:32,M14,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician A
+E009,2025-09-29 18:37:32,M18,Plant B,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E010,2025-09-27 17:07:32,M09,Plant A,Unexpected stop detected,Inspector notified; pending review,Technician A
+E011,2025-09-29 03:52:32,M08,Plant A,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E012,2025-09-30 11:52:32,M06,Plant A,Unexpected stop detected,Inspector notified; pending review,Technician B
+E013,2025-09-29 01:17:32,M15,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician B
+E014,2025-09-28 03:52:32,M13,Plant B,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E015,2025-09-29 19:22:32,M01,Plant A,Unexpected stop detected,Inspector notified; pending review,Technician B
+E016,2025-09-30 04:42:32,M08,Plant A,Unexpected stop detected,Inspector notified; pending review,Technician B
+E017,2025-09-28 06:42:32,M06,Plant A,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E018,2025-09-30 16:17:32,M12,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician B
+E019,2025-09-29 16:32:32,M07,Plant A,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E020,2025-09-28 16:42:32,M10,Plant A,Unexpected stop detected,Inspector notified; pending review,Technician A
+E021,2025-09-28 06:07:32,M19,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician A
+E022,2025-09-28 13:12:32,M02,Plant A,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E023,2025-09-28 23:12:32,M17,Plant B,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E024,2025-09-28 11:02:32,M18,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician B
+E025,2025-09-29 20:52:32,M19,Plant B,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E026,2025-09-30 15:42:32,M20,Plant B,Unexpected stop detected,Inspector notified; pending review,Supervisor
+E027,2025-09-29 00:07:32,M13,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician A
+E028,2025-09-30 11:07:32,M04,Plant A,Unexpected stop detected,Inspector notified; pending review,Technician B
+E029,2025-09-28 14:12:32,M15,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician B
+E030,2025-09-28 09:22:32,M12,Plant B,Unexpected stop detected,Inspector notified; pending review,Technician B
