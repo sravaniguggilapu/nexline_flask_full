@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn nexline_flask_full.app:app
