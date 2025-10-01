@@ -41,8 +41,8 @@ def init_db():
 app = Flask(__name__)
 app.secret_key = 'dev-secret-key'
 
-@app.before_first_request
-def setup():
+# ✅ Initialize DB at startup (Flask 3.x safe)
+with app.app_context():
     init_db()
 
 # ✅ FIXED FUNCTION
